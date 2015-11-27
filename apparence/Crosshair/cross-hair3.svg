@@ -1,0 +1,24 @@
+<?xml version="1.0"?><svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+ <metadata id="metadata2379">image/svg+xml</metadata>
+ <g>
+  <title>Layer 1</title>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" stroke-miterlimit="4" d="m203.679596,188.543106l130.127045,0" id="path3134"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" stroke-miterlimit="4" d="m43.279598,188.543106l130.127048,0" id="path3134b"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" d="m65.594131,199.378922l0,-21.671631" id="path6099"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" id="path6101" d="m106.577118,199.378922l0,-21.671631"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" d="m147.560135,199.378922l0,-21.671631" id="path6103"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" id="path6105" d="m229.526138,199.378922l0,-21.671631"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" d="m270.509125,199.378922l0,-21.671631" id="path6107"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" id="path6109" d="m311.492126,199.378922l0,-21.671631"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" stroke-miterlimit="4" id="path6292" d="m188.543106,202.946274l0,130.860367"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" stroke-miterlimit="4" id="path6292b" d="m188.543106,43.279598l0,129.527042"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" id="path6300" d="m177.707321,65.594124l21.6716,0"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" d="m177.707321,106.577103l21.6716,0" id="path6302"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" id="path6304" d="m177.707321,147.560104l21.6716,0"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" d="m177.707321,229.526138l21.6716,0" id="path6306"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" id="path6308" d="m177.707321,270.509064l21.6716,0"/>
+  <path fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="9.39104" d="m177.707321,311.492065l21.6716,0" id="path6310"/>
+  <circle id="svg_1" r="10" cy="188" cx="188.4" stroke-width="0" fill="#000000"/>
+  <circle id="svg_3" r="170" cy="188.4" cx="189.2" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray="null" stroke-width="22" stroke="#000000" fill="none"/>
+ </g>
+</svg>
