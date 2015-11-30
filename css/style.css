@@ -1,9 +1,28 @@
 body {
-     background-image: url("../apparence/background2.jpg");
+    
+     background-image: url("../apparence/background2.jpg"); 
+    background-size: 100%;
     background-attachment: fixed;
     background-repeat:no-repeat;
     font-size: 14px;
     color: white;
     text-align: center;
+    background-color: black;
     
 }
+
+div {
+    margin-top: 175px;
+}
+
+
+menu {
+    text-align: center;
+}
+
+audio  {
+    margin left: 0px;
+    margin-bottom: 0px;
+    
+}
+    
