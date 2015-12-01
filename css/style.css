@@ -4,7 +4,6 @@ body {
     background-size: 100%;
     background-attachment: fixed;
     background-repeat:no-repeat;
-    font-size: 14px;
     color: white;
     text-align: center;
     background-color: black;
@@ -21,8 +20,8 @@ menu {
 }
 
 audio  {
-    margin left: 0px;
-    margin-bottom: 0px;
+    display: inline-block;
+    margin-bottom: 40px;
     
 }
     
