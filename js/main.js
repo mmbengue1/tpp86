@@ -1,36 +1,60 @@
 /**
  * Created by ddubreui on 2015-11-26.
  */
-var chargement;
-var score = 0;
-var scoretext;
-var time = 0;
-var timertext;
-var stage;
-var animation;
-var TargetXPos = 100;
-var targetYPos = 100;
-var targetXSpeed = 1.5;
-var targetYSpeed = 1.75;
-WIDTH = 1000;
-HEIGHT = 1000;
 
-//creation du score
+var time = 0;
+
+//creation d'un compte a rebours  pour determiner le temps de jeu
+function startTimer(duration, affichage) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        affichage.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+//lance la fonction startimer  au chargement de la page
+window.onload = function () {
+    var uneMinutes = 60 * 1,// genere le temps de jeu que l'on veut juste en multipliant par 60 s par le chiffre que l'on veut
+        display = document.querySelector("#time");
+    startTimer(uneMinutes, display);
+};
+
+//Incrementation du score chaque fois qu'on aura atteint la cible
 document.getElementById('spirite').onclick=function(){
     var score = parseInt(document.getElementById("score").innerHTML);
     score = score + 50;//incrementaion du scrore par 50 a chaque click
     document.getElementById("score").innerHTML = score;
 
 }
+
+//Decrementation du scrore quand on rate un click sur la cible
+document.getElementById('body_game').onclick=function(){
+    var score = parseInt(document.getElementById("score").innerHTML);
+    score = score - 25;//incrementaion du scrore par 50 a chaque click
+    document.getElementById("score").innerHTML = score;
+
+}
+
+
+
 //faire disparaitre  et reapparaitre une image au click
 
 $(document).ready(function(){
     $("#spirite").click(function() {
-        $("#spirite").fadeOut(1000);
+        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
     });
 
     $("#spirite").click(function() {
-        $("#spirite").fadeIn(1500);
+        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
     });
 });
 //permutation de l'image on click
@@ -89,24 +113,4 @@ function calcSpeed(prev, next) {
     return speed;
 
 }
-var timer;
-var output;
-var game;
 
-function init(){
-    game = new Scene();
-    output = document.getElementById("output");
-    timer = new Timer();
-    timer.reset();
-    game.start();
-} // end init
-
-function update(){
-    game.hide();
-    currentTime = timer.getElapsedTime();
-    output.innerHTML = currentTime;
-} // end update
-
-function reset(){
-    timer.reset();
-} // end reset

@@ -1,8 +1,8 @@
 body {
     background-attachment: fixed;
     background-repeat:no-repeat;
-    color: white;
-    text-align: center;
+
+
     
 }
 
@@ -36,7 +36,14 @@ a:active  {color:white;  }
 
 
 
-#score {
-    color: purple;
-    font-style: ;
+
+
+#countdown{
+    text-align: center;
+    color: deeppink;
+}
+
+#divscore{
+    color:orange;
+    text-align: right;
 }
