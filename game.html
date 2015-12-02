@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <title>Projet TP DAM</title>
     <style>
+        #spirite {
+            position: fixed;
+            top: 0;
+        }
 
+        body {overflow-x: hidden}
     </style>
 </head>
 
@@ -12,16 +17,17 @@
 <h2>Bienvenue sur notre site web du TP_P86</h2>
 <img src="pic_mountain.jpg" alt="Mountain View" >
 <div id = "container">
-    <img id= "spirite" src="tp_p86_image/cross_hair1.jpg" alt="Mountain View" style="width:150px;height:100px;"/>
-    <form>
+
+   <!-- <form>
 
         <p>click boutton pour commencer</p>
         <input type="button" value="Start" onclick="moveRight();" />
         <input type="button" value="Stop" onclick="stop();" />
-    </form>
-  <a href="#" onMouseOver="document.myImage.src=image2.src;" onMouseOut="document.myImage.src=image1.src;"/>
-    <img name ="myImage"  src="apparence/images/Isi2.jpg" style="width:150px;height:100px;"/>
+    </form>-->
+ <a href="#" onMouseOver="document.myImage.src=image2.src;" onMouseOut="document.myImage.src=image1.src;"/>
+    <img name ="myImage" id= "spirite"  src="apparence/images/Isi2.jpg" alt="Mountain View"  border="0" style="width:150px;height:100px;"/>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
