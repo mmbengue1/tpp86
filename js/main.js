@@ -31,7 +31,7 @@ window.onload = function () {
 //Incrementation du score chaque fois qu'on aura atteint la cible
 document.getElementById('spirite').onclick=function(){
     var score = parseInt(document.getElementById("score").innerHTML);
-    score = score + 50;//incrementaion du scrore par 50 a chaque click
+    score = score + 75;//incrementaion du scrore par 50 a chaque click
     document.getElementById("score").innerHTML = score;
 
 }
