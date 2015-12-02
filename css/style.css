@@ -1,14 +1,12 @@
-body {
-    background-attachment: fixed;
-    background-repeat:no-repeat;
 
-
-    
-}
 
 #body_index {
     background-image: url("../apparence/images/background_index.jpg");
     background-size: 100%;
+    color:white;
+    text-align: center;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
 }
 
 #body_game {
