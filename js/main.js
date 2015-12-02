@@ -38,16 +38,16 @@ if(document.images){
     var image1 = new Image(); // charge une image a l'avance
     image1.src = "apparence/images/Star-Wars-Ship-1.gif";
     var image2 = new Image(); //charger une deuxieme image a l'avance
-    image2.src = "apparence/images/Star-Wars-Ship-Posters-2.gif";//l'image
+    image2.src = "apparence/images/Star-Wars-Ship-Posters-2.gif";//l'image explosion
 }
 
 //fonction pour animer un objet aleatoire avec un math random
 $(document).ready(function() {
-    animateDiv($('#spirite'));//application de la fonction a un objet(on l'appliquer a autant d'element  ou d'objet que l'on veut )
+    animateDiv($('#spirite'));//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
 
 
 });
-//fonction generer une image aleatoirement parraport a la fenetre du window
+//fonction generer une image aleatoirement par rapport a la fenetre du window
 function makeNewPosition() {
 
 
@@ -82,7 +82,7 @@ function calcSpeed(prev, next) {
 
     var greatest = x > y ? x : y;
 
-    var speedModifier = 0.1;
+    var speedModifier = 0.5;
 
     var speed = Math.ceil(greatest / speedModifier);
 
