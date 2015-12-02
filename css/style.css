@@ -6,23 +6,16 @@ body {
     
 }
 
-#container_index {
-    background-image: url("../apparence/background2.jpg");
+#body_index {
+    background-image: url("../apparence/images/background_index.jpg");
     background-size: 100%;
 }
 
-#container_game {
+#body_game {
     background-image: url("../apparence/images/background_game.jpg");
+    background-size: 100%;
 }
 
-div {
-    margin-top: 175px;
-}
-
-
-menu {
-    text-align: center;
-}
 
 audio  {
     display: inline-block;
@@ -40,7 +33,7 @@ a:active  {color:white;  }
     top: 0;
 }
 
-body {overflow-x: hidden}
+
 
 
 #score {
