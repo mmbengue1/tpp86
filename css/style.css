@@ -1,13 +1,18 @@
 body {
-    
-     background-image: url("../apparence/background2.jpg"); 
-    background-size: 100%;
     background-attachment: fixed;
     background-repeat:no-repeat;
     color: white;
     text-align: center;
-    background-color: black;
     
+}
+
+#container_index {
+    background-image: url("../apparence/background2.jpg");
+    background-size: 100%;
+}
+
+#container_game {
+    background-image: url("../apparence/images/background_game.jpg");
 }
 
 div {
@@ -29,3 +34,15 @@ a:link    {color:white; }
 a:visited {color:white; }
 a:hover   {color:white; }
 a:active  {color:white;  }
+
+#spirite {
+    position: fixed;
+    top: 0;
+}
+
+body {overflow-x: hidden}
+
+
+#score {
+    color: purple;
+}

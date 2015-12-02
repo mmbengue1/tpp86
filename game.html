@@ -2,34 +2,21 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Projet TP DAM</title>
-    <style>
-        #spirite {
-            position: fixed;
-            top: 0;
-        }
-
-        body {overflow-x: hidden}
-
-
-        #score {
-            color: purple;
-        }
-    </style>
 </head>
 
 <body>
-<h2></h2>
 
-<div id = "container">
+<div id="container_game">
     <div id="score">0</div>
-   <!-- <form>
+    <!--<form>
 
         <p>click boutton pour commencer</p>
         <input type="button" value="Start" onclick="moveRight();" />
         <input type="button" value="Stop" onclick="stop();" />
     </form>-->
- <a href="#" onMouseOver="document.myImage.src=image2.src;" onMouseOut="document.myImage.src=image1.src;"/>
+  <a href="#" onMouseOver="document.myImage.src=image2.src;" onMouseOut="document.myImage.src=image1.src;"/>
     <img name ="myImage" id= "spirite"  src="apparence/images/Isi2.jpg" alt="Mountain View"  border="0" style="width:150px;height:100px;"/>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
