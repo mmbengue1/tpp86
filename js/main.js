@@ -15,12 +15,12 @@ var targetYSpeed = 1.75;
 WIDTH = 1000;
 HEIGHT = 1000;
 
-/*
-timerText = new createjs.Text("Time: " + gameTime.toString(), "36px Arial", "#FFF");
-timerText.x = 800;
-timerText.y = 10;
-stage.addChild(timerText);
-*/
+//creation du score
+document.getElementById('spirite').onclick=function(){
+    var score = parseInt(document.getElementById("score").innerHTML);
+    score = score + 50;//incrementaion du scrore par 50 a chaque click
+    document.getElementById("score").innerHTML = score;
+}
 
 //permutation de l'image on click
 if(document.images){
@@ -30,30 +30,51 @@ if(document.images){
     image2.src = "apparence/images/Star-Wars-Ship-Posters-2.gif";
 }
 
-//fonction pour animer une image aleatoire avec un math random
-$(document).ready(function(){
-    animateSpirit();
+//fonction pour animer un objet aleatoire avec un math random
+$(document).ready(function() {
+    animateDiv($('#spirite'));//application de la fonction a un objet(on l'appliquer a autant d'element  ou d'objet que l'on veut )
+
 
 });
-//Generer une position aleatoire parraport a la fenetre du navigateur
-function randomPosition(){
+//fonction generer une image aleatoirement parraport a la fenetre du window
+function makeNewPosition() {
 
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width()  - 50;
+
+    var h = $(window).height() - 100;//parraport a la hauteur
+    var w = $(window).width() - 100;//parraport a la largeur
 
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
 
-    return [nh,nw];
+    return [nh, nw];
 
 }
-//animation de l'image en passant par l'id qui lui est attribue
-function animateSpirit(){
-    var newq = randomPosition();
-    $('#spirite').animate({ top: newq[0], left: newq[1] }, function(){
-        animateSpirit();
+//Parametre de l'animation de l'objet
+function animateDiv($target) {
+    var newq = makeNewPosition($target.parent());
+    var oldq = $target.offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+    $target.animate({
+        top: newq[0],
+        left: newq[1]
+    }, speed, function() {
+        animateDiv($target);
     });
 
 };
+//function pour regler la vitesse que l'on veut appliqquer
+function calcSpeed(prev, next) {
 
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = 0.1;
+
+    var speed = Math.ceil(greatest / speedModifier);
+
+    return speed;
+
+}
