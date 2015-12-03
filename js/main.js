@@ -86,17 +86,19 @@ if(document.images){
 //faire disparaitre  et reapparaitre une image au click
 
 $(document).ready(function(){
-    document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
-    $("#spirite").click(function() {
-        document.myImage.src=image2.src;
-        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
-        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
 
+    $("#spirite").click(function() {
+
+        document.myImage.src=image2.src;
+        $("#image2").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
+        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
+        document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
 
     });
 //fonction pour animer un objet aleatoire avec un math random
     animateDiv($('#spirite'));//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
 });
+
 
 //fonction generer une image aleatoirement par rapport a la fenetre du window
 function makeNewPosition() {
