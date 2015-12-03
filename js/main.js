@@ -59,6 +59,19 @@ $(document).ready(function() {
 
 });
 
+// Son audio explosion lorsqua la cible est atteint
+$(document).ready(function() {
+    var explosion = document.createElement("audio");
+    explosion.src="apparence/SoundEffect/explosion.mp3";
+    explosion.autoPlay=false;
+    explosion.preLoad=true;
+
+    $("#spirite").click(function() {
+        explosion.play();
+    });
+
+});
+
 //faire disparaitre  et reapparaitre une image au click
 
 $(document).ready(function(){
@@ -70,6 +83,8 @@ $(document).ready(function(){
         $("#spirite").fadeIn(1000);//reapparait  progressivement avec un temps
     });
 });
+
+
 //permutation de l'image on click
 if(document.images){
     var image1 = new Image(); // charge une image a l'avance
@@ -90,8 +105,8 @@ $(document).ready(function() {
 function makeNewPosition() {
 
 
-    var h = $(window).height() - 100;//parraport a la hauteur
-    var w = $(window).width() - 100;//parraport a la largeur
+    var h = $(document).height() - 300;//parraport a la hauteur
+    var w = $(document).width() - 170;//parraport a la largeur
 
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);

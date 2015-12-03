@@ -1,5 +1,8 @@
 
 
+
+
+
 #body_index {
     background-image: url("../apparence/images/background_index.jpg");
     background-size: 100%;
@@ -15,8 +18,8 @@
     height: 100px;
     background-repeat:no-repeat;
     background-color: black;
-    margin-left: auto;
-    margin-right: auto;
+    margin:0;
+    padding:0;
     cursor:url(../apparence/Crosshair/crosshair-final.png),auto;
 }
 
