@@ -3,8 +3,7 @@
  */
 
 var time = 0;
-
-
+var sprite = null;
 
 //creation d'un compte a rebours  pour determiner le temps de jeu
 function startTimer(duration, affichage) {
@@ -20,6 +19,7 @@ function startTimer(duration, affichage) {
 
         if (--timer < 0) {
             timer = duration;
+            alert("you lost" );
         }
     }, 1000);
 }
@@ -33,15 +33,19 @@ window.onload = function () {
 //Incrementation du score chaque fois qu'on aura atteint la cible
 document.getElementById('spirite').onclick=function(){
     var score = parseInt(document.getElementById("score").innerHTML);
-    score = score + 75;//incrementaion du scrore par 50 a chaque click
+    score = score + 75;//incrementaion du scrore par 75 a chaque click
     document.getElementById("score").innerHTML = score;
+    if (score == 100) {
+        alert("fuck u")
+    }
+
 
 }
 
 //Decrementation du scrore quand on rate un click sur la cible
 document.getElementById('body_game').onclick=function(){
     var score = parseInt(document.getElementById("score").innerHTML);
-    score = score - 25;//incrementaion du scrore par 50 a chaque click
+    score = score - 25;//decrementaion du scrore par 25 a chaque click
     document.getElementById("score").innerHTML = score;
 
 }
@@ -54,22 +58,19 @@ $(document).ready(function() {
     shot.preLoad=true;
 
     $("#body_game").click(function() {
-        shot.play();
-    });
+      shot.play();
+  });
 
 });
 
 // Son audio explosion lorsqua la cible est atteint
 $(document).ready(function() {
+    sprite = document.getElementById('spirite');
     var explosion = document.createElement("audio");
     explosion.src="apparence/SoundEffect/explosion.mp3";
     explosion.autoPlay=false;
     explosion.preLoad=true;
-
-    $("#spirite").click(function() {
-        explosion.play();
-    });
-
+    explosion.play();
 });
 
 
@@ -81,35 +82,28 @@ if(document.images){
     image2.src = "apparence/images/explosion.gif";//l'image explosion
 }
 
-document.getElementById("spirite").onclick=function(){document.myImage.src=image2.src};
-
 
 //faire disparaitre  et reapparaitre une image au click
 
 $(document).ready(function(){
+    document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
     $("#spirite").click(function() {
-
+        document.myImage.src=image2.src;
         $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
-    });
-
-    $("#spirite").click(function() {
         $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
-        document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
+
+
     });
-});
-
 //fonction pour animer un objet aleatoire avec un math random
-$(document).ready(function() {
     animateDiv($('#spirite'));//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
-
-
 });
+
 //fonction generer une image aleatoirement par rapport a la fenetre du window
 function makeNewPosition() {
 
 
-    var h = $(window).height() - 100;//parraport a la hauteur
-    var w = $(window).width() - 100;//parraport a la largeur
+    var h = $(document.body).height() - 100;//parraport a la hauteur
+    var w = $(document.body).width() - 100;//parraport a la largeur
 
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
@@ -139,7 +133,7 @@ function calcSpeed(prev, next) {
 
     var greatest = x > y ? x : y;
 
-    var speedModifier = 0.5;
+    var speedModifier = 0.4;
 
     var speed = Math.ceil(greatest / speedModifier);
 
