@@ -50,19 +50,19 @@ document.getElementById('body_game').onclick=function(){
 
 $(document).ready(function(){
     $("#spirite").click(function() {
-        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
+        $("#spirite").fadeOut(500);//Disparrait progressivement par rapport a temps donne
     });
 
     $("#spirite").click(function() {
-        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
+        $("#spirite").fadeIn(1000);//reapparait  progressivement avec un temps
     });
 });
 //permutation de l'image on click
 if(document.images){
     var image1 = new Image(); // charge une image a l'avance
-    image1.src = "apparence/images/Star-Wars-Ship-1.gif";
+    image1.src = "apparence/images/Star-Wars-Ship3.gif";
     var image2 = new Image(); //charger une deuxieme image a l'avance
-    image2.src = "apparence/images/Star-Wars-Ship-Posters-2.gif";//l'image explosion
+    image2.src = "apparence/images/explosion.gif";//l'image explosion
 }
 
 //fonction pour animer un objet aleatoire avec un math random
