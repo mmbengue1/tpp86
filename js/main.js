@@ -4,6 +4,8 @@
 
 var time = 0;
 
+
+
 //creation d'un compte a rebours  pour determiner le temps de jeu
 function startTimer(duration, affichage) {
     var timer = duration, minutes, seconds;
@@ -44,7 +46,18 @@ document.getElementById('body_game').onclick=function(){
 
 }
 
+// Son audio tire avec la sourie
+$(document).ready(function() {
+    var shot = document.createElement("audio");
+    shot.src="apparence/SoundEffect/shot_sound.mp3";
+    shot.autoPlay=false;
+    shot.preLoad=true;
 
+    $("#body_game").click(function() {
+        shot.play();
+    });
+
+});
 
 //faire disparaitre  et reapparaitre une image au click
 
@@ -64,6 +77,8 @@ if(document.images){
     var image2 = new Image(); //charger une deuxieme image a l'avance
     image2.src = "apparence/images/explosion.gif";//l'image explosion
 }
+
+
 
 //fonction pour animer un objet aleatoire avec un math random
 $(document).ready(function() {
@@ -111,6 +126,9 @@ function calcSpeed(prev, next) {
     var speed = Math.ceil(greatest / speedModifier);
 
     return speed;
+
+
+
 
 }
 
