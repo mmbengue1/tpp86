@@ -40,11 +40,6 @@ a:active  {color:white;  }
     top: 0;
 }
 
-
-
-
-
-
 #countdown{
     text-align: center;
     color: yellow;
@@ -60,7 +55,7 @@ a:active  {color:white;  }
 }
 
 input {
-    width: 80px;
+    width: 120px;
     height: 80px;
     font-size: 50px;
 
