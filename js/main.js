@@ -72,18 +72,6 @@ $(document).ready(function() {
 
 });
 
-//faire disparaitre  et reapparaitre une image au click
-
-$(document).ready(function(){
-    $("#spirite").click(function() {
-        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
-    });
-
-    $("#spirite").click(function() {
-        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
-    });
-});
-
 
 //permutation de l'image on click
 if(document.images){
@@ -93,7 +81,22 @@ if(document.images){
     image2.src = "apparence/images/explosion.gif";//l'image explosion
 }
 
+document.getElementById("spirite").onclick=function(){document.myImage.src=image2.src};
 
+
+//faire disparaitre  et reapparaitre une image au click
+
+$(document).ready(function(){
+    $("#spirite").click(function() {
+
+        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
+    });
+
+    $("#spirite").click(function() {
+        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
+        document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
+    });
+});
 
 //fonction pour animer un objet aleatoire avec un math random
 $(document).ready(function() {
