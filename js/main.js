@@ -76,11 +76,11 @@ $(document).ready(function() {
 
 $(document).ready(function(){
     $("#spirite").click(function() {
-        $("#spirite").fadeOut(500);//Disparrait progressivement par rapport a temps donne
+        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
     });
 
     $("#spirite").click(function() {
-        $("#spirite").fadeIn(1000);//reapparait  progressivement avec un temps
+        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
     });
 });
 
@@ -105,8 +105,8 @@ $(document).ready(function() {
 function makeNewPosition() {
 
 
-    var h = $(document).height() - 300;//parraport a la hauteur
-    var w = $(document).width() - 170;//parraport a la largeur
+    var h = $(window).height() - 100;//parraport a la hauteur
+    var w = $(window).width() - 100;//parraport a la largeur
 
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
