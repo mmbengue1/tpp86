@@ -4,7 +4,7 @@
 
 var time = 0;
 var sprite = null;
-
+document.addEventListener('DOMContentLoaded', function() {
 //creation d'un compte a rebours  pour determiner le temps de jeu
 function startTimer(duration, affichage) {
     var timer = duration, minutes, seconds;
@@ -18,14 +18,14 @@ function startTimer(duration, affichage) {
         affichage.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            timer = duration;
-            alert("you lost" );
+            window.location.href = "/tpp86/game_over.html";
+
         }
     }, 1000);
 }
 //lance la fonction startimer  au chargement de la page
 window.onload = function () {
-    var uneMinutes = 60 * 1,// genere le temps de jeu que l'on veut juste en multipliant par 60 s par le chiffre que l'on veut
+    var uneMinutes = 60 * 1  // genere le temps de jeu que l'on veut juste en multipliant par 60 s par le chiffre que l'on veut
         display = document.querySelector("#time");
     startTimer(uneMinutes, display);
 };
@@ -36,7 +36,8 @@ document.getElementById('spirite').onclick=function(){
     score = score + 75;//incrementaion du scrore par 75 a chaque click
     document.getElementById("score").innerHTML = score;
     if (score == 100) {
-        alert("fuck u")
+
+
     }
 
 
@@ -70,7 +71,11 @@ $(document).ready(function() {
     explosion.src="apparence/SoundEffect/explosion.mp3";
     explosion.autoPlay=false;
     explosion.preLoad=true;
-    explosion.play();
+    $("#spirite").click(function() {
+        explosion.play();
+    });
+
+
 });
 
 
@@ -90,14 +95,24 @@ $(document).ready(function(){
     $("#spirite").click(function() {
 
         document.myImage.src=image2.src;
-        $("#image2").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
+        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
         $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
         document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
 
     });
 //fonction pour animer un objet aleatoire avec un math random
+
+// Lien vers la page game.html
+    $("#start_over").click(function() {
+        window.location ="game.html";
+
+    });
+
+
     animateDiv($('#spirite'));//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
 });
+
+
 
 
 //fonction generer une image aleatoirement par rapport a la fenetre du window
@@ -145,4 +160,4 @@ function calcSpeed(prev, next) {
 
 
 }
-
+});

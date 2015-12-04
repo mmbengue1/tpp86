@@ -13,18 +13,23 @@
     <div id ="divscore" >Score: <span id="score">0</span > </div>
     <img name="myImage" id="spirite"  src="apparence/images/Star-Wars-Ship3.gif" alt="Ship3"  border="0" style="width:200px;height:150px;"/>
     <div id="button_game">
-    <input id="start" type="button"  value="Start">
-    <input id="stop" type="button"  value="Stop">
-    </div>
+        <form action="/tpp86/game.html" class="bouton_game">
+            <button class="bouton_game">Restart</button>
+        </form>
+        <form action="/tpp86/index.html" class="bouton_game">
+            <button class="bouton_game">Main Menu</button>
+        </form>
 
     <div id="dialog" title="Boîte de dialogue de base">
     Cette boîte de dialogue peut être redimensionnée, déplacée et fermée.
     </div>
-    <audio controls autoplay>
+
+    <audio autoplay>
 
         <source src="apparence/SoundEffect/Star-Wars-Ambience.mp3" type="audio/mpeg">
 
     </audio>
+</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>

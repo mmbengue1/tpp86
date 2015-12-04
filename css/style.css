@@ -12,6 +12,11 @@
     background-repeat:no-repeat;
 }
 
+#menu {
+    margin-top: 15%;
+
+}
+
 #body_game {
     background-image: url("../apparence/images/background_game.jpg");
     background-size: 100%;
@@ -20,6 +25,24 @@
     background-color: black;
 
     cursor:url(../apparence/Crosshair/crosshair-final.png),auto;
+}
+#body_game_over {
+    background-image: url("../apparence/images/background_game_over.jpg");
+    background-size: 100%;
+    color:white;
+    text-align: center;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-color: black;
+}
+#body_instruction {
+    background-image: url("../apparence/images/background_instruction.jpg");
+    background-size: 100%;
+    color:white;
+    text-align: center;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+
 }
 
 
@@ -53,20 +76,39 @@ a:active  {color:white;  }
     margin-left: 25px;
 }
 
-input {
-    width: 120px;
-    height: 80px;
-    font-size: 50px;
+#body_game_over{
+    margin-left: 50px;
+    margin-top: 600px;
+}
+
+.bouton_game_over {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+    border: 3px solid yellow;
+    font-family: "Times New Roman", Serif;
+    background-color: black;
+    color: white;
 
 }
 
 #button_game {
-    margin-left: 45%;
-    margin-top: 40%;
+    margin-left: 500px;
+    margin-top: 500px;
+}
+.bouton_game {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+    border: 3px solid yellow;
+    font-family: "Times New Roman", Serif;
+    background-color: black;
+    color: white;
+
 
 }
-
-
 
 #stop {
     margin-left: 10px;
