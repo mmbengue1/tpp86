@@ -25,7 +25,7 @@ function startTimer(duration, affichage) {
 }
 //lance la fonction startimer  au chargement de la page
 window.onload = function () {
-    var uneMinutes = 60 * 1  // genere le temps de jeu que l'on veut juste en multipliant par 60 s par le chiffre que l'on veut
+    var uneMinutes = 60 * 3  // genere le temps de jeu que l'on veut juste en multipliant par 60 s par le chiffre que l'on veut
         display = document.querySelector("#time");
     startTimer(uneMinutes, display);
 };
@@ -35,10 +35,10 @@ document.getElementById('spirite').onclick=function(){
     var score = parseInt(document.getElementById("score").innerHTML);
     score = score + 75;//incrementaion du scrore par 75 a chaque click
     document.getElementById("score").innerHTML = score;
-    if (score > 200) {
+   /* if (score > 200) {
       alert("you are  a beast bro! ")// juste un autre essaie,on esseyera d'appliquer au augmentation e vitesse a cette fonctiom
     }
-
+*/
 
 }
 
@@ -49,7 +49,7 @@ document.getElementById('body_game').onclick=function(){
     document.getElementById("score").innerHTML = score;
     if(score <= -200){                                   /*quand le joueur est assez null
                                                            pour avoir un score de - 200 ,le jeu s'arreter*/
-        window.location.href = "/tpp86/game_over.html";
+        window.location.href = "/game_over.html";
     }
 
 }
@@ -87,7 +87,7 @@ if(document.images){
     var image1 = new Image(); // charge une image a l'avance
     image1.src = "apparence/images/Star-Wars-Ship3.gif";
     var image2 = new Image(); //charger une deuxieme image a l'avance
-    image2.src = "apparence/images/explosion.gif";//l'image explosion
+    image2.src = "apparence/images/Star-Wars-Ship3-explosion.gif";//l'image explosion
 }
 
 
@@ -103,15 +103,15 @@ $(document).ready(function(){
         document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
 
     });
-
+/*
     $("#spirite2").click(function() {
 
         document.myImage2.src=image4.src;
         $("#spirite2").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
         $("#spirite2").fadeIn(1500);//reapparait  progressivement avec un temps
-        document.getElementById("spirite2").onmouseout=function(){document.myImage2.src=image3.src};
+       document.getElementById("spirite2").onmouseout=function(){document.myImage2.src=image3.src};
 
-    });
+    });*/
 
 //fonction pour animer un objet aleatoire avec un math random
 
@@ -163,7 +163,7 @@ function calcSpeed(prev, next) {
 
     var greatest = x > y ? x : y;
 
-    var speedModifier = 8;
+    var speedModifier = 0.5;
 
     var speed = Math.ceil(greatest / speedModifier);
 
