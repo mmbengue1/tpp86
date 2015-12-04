@@ -91,6 +91,7 @@ a:active  {color:white;  }
     background-color: black;
     color: white;
 
+
 }
 
 #button_game {
@@ -114,4 +115,8 @@ a:active  {color:white;  }
 #stop {
     margin-left: 10px;
 
+}
+
+#bouton_game_over{
+    text-align: center;
 }

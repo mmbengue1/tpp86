@@ -123,7 +123,7 @@ function makeNewPosition() {
 
 
     var h = $(document.body).height() - 150;//parraport a la hauteur
-    var w = $(document.body).width() - 250;//parraport a la largeur
+    var w = $(document.body).width() - 200;//parraport a la largeur
 
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
@@ -153,7 +153,7 @@ function calcSpeed(prev, next) {
 
     var greatest = x > y ? x : y;
 
-    var speedModifier = 0.4;
+    var speedModifier = 8;
 
     var speed = Math.ceil(greatest / speedModifier);
 
