@@ -82,16 +82,12 @@ $(document).ready(function() {
 });
 
 
-//permutation de vaisseau1 on click
+//permutation de l'image on click
 if(document.images){
     var image1 = new Image(); // charge une image a l'avance
     image1.src = "apparence/images/Star-Wars-Ship3.gif";
     var image2 = new Image(); //charger une deuxieme image a l'avance
-    image2.src = "apparence/images/Star-Wars-Ship3-explosion.gif";//l'image explosion
-    var image3 = new Image(); // charge une image a l'avance
-    image3.src = "apparence/images/Star-Wars-Ship4.gif";
-    var image4 = new Image(); // charge une image a l'avance
-    image4.src = "apparence/images/Star-Wars-Ship4-explosion.gif";
+    image2.src = "apparence/images/explosion.gif";//l'image explosion
 }
 
 
@@ -167,7 +163,7 @@ function calcSpeed(prev, next) {
 
     var greatest = x > y ? x : y;
 
-    var speedModifier = 0.5;
+    var speedModifier = 8;
 
     var speed = Math.ceil(greatest / speedModifier);
 

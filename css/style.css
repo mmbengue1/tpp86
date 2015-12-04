@@ -5,30 +5,29 @@
 
 #body_index {
     background-image: url("../apparence/images/background_index.jpg");
-    background-size: 100%;
+    background-size: 1024px 600px;
     color:white;
     text-align: center;
     background-attachment: fixed;
     background-repeat:no-repeat;
+    background-color:black;
 }
 
 #menu {
-    margin-top: 15%;
+
 
 }
 
 #body_game {
     background-image: url("../apparence/images/background_game.jpg");
-    background-size: 1700px 700px;
-    height: 700px;
+    background-size: 1024px 600px;
     background-repeat:no-repeat;
     background-color: black;
-
     cursor:url(../apparence/Crosshair/crosshair-final.png),auto;
 }
 #body_game_over {
     background-image: url("../apparence/images/background_game_over.jpg");
-    background-size: 100%;
+    background-size: 1024px 600px;
     color:white;
     text-align: center;
     background-attachment: fixed;
@@ -76,10 +75,6 @@ a:active  {color:white;  }
     margin-left: 25px;
 }
 
-#body_game_over{
-    margin-left: 50px;
-    margin-top: 600px;
-}
 
 .bouton_game_over {
     display: inline-block;
@@ -90,13 +85,13 @@ a:active  {color:white;  }
     font-family: "Times New Roman", Serif;
     background-color: black;
     color: white;
-
+    text-align: center;
 
 }
 
 #button_game {
 
-    margin-top: 625px;
+    margin-top:505px;
     text-align: center;
 }
 .bouton_game {
@@ -117,6 +112,33 @@ a:active  {color:white;  }
 
 }
 
-#bouton_game_over{
+#button_game_over{
     text-align: center;
+    margin-top: 500px;
+
+}
+
+h1{
+    color: #fff;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+    font: 80px 'ChunkFiveRegular';
+}
+
+
+h2{
+
+    text-shadow: 0 0 5px #282bff, 0 0 10px #282bff, 0 0 15px #282bff, 0 0 20px #1918ff, 0 0 30px #282bff, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+    letter-spacing: 5px;
+    font: 50px 'MisoRegular';
+}
+
+h4{
+    color: #fff400;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #ffffff, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+    font: 50px 'ChunkFiveRegular';
+    margin:0;
+}
+
+th{
+
 }
