@@ -19,8 +19,8 @@
 
 #body_game {
     background-image: url("../apparence/images/background_game.jpg");
-    background-size: 100%;
-    height: 550px;
+    background-size: 1700px 700px;
+    height: 700px;
     background-repeat:no-repeat;
     background-color: black;
 
@@ -94,8 +94,9 @@ a:active  {color:white;  }
 }
 
 #button_game {
-    margin-left: 500px;
-    margin-top: 500px;
+
+    margin-top: 625px;
+    text-align: center;
 }
 .bouton_game {
     display: inline-block;
