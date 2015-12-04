@@ -35,9 +35,8 @@ document.getElementById('spirite').onclick=function(){
     var score = parseInt(document.getElementById("score").innerHTML);
     score = score + 75;//incrementaion du scrore par 75 a chaque click
     document.getElementById("score").innerHTML = score;
-    if (score == 100) {
-
-
+    if (score > 200) {
+      alert("you are  a beast bro! ")// juste un autre essaie,on esseyera d'appliquer au augmentation e vitesse a cette fonctiom
     }
 
 
@@ -48,6 +47,10 @@ document.getElementById('body_game').onclick=function(){
     var score = parseInt(document.getElementById("score").innerHTML);
     score = score - 25;//decrementaion du scrore par 25 a chaque click
     document.getElementById("score").innerHTML = score;
+    if(score <= -200){                                   /*quand le joueur est assez null
+                                                           pour avoir un score de - 200 ,le jeu s'arreter*/
+        window.location.href = "/tpp86/game_over.html";
+    }
 
 }
 
