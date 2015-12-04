@@ -91,7 +91,7 @@ a:active  {color:white;  }
 
 #button_game {
 
-    margin-top: 335px;
+    margin-top:505px;
     text-align: center;
 }
 .bouton_game {
@@ -114,7 +114,7 @@ a:active  {color:white;  }
 
 #button_game_over{
     text-align: center;
-    margin-top: 525px;
+    margin-top: 500px;
 
 }
 
@@ -126,8 +126,19 @@ h1{
 
 
 h2{
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #282bff, 0 0 15px #1918ff, 0 0 20px #4c7ab5, 0 0 30px #4c7ab5, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+
+    text-shadow: 0 0 5px #282bff, 0 0 10px #282bff, 0 0 15px #282bff, 0 0 20px #1918ff, 0 0 30px #282bff, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
     letter-spacing: 5px;
     font: 50px 'MisoRegular';
+}
+
+h4{
+    color: #fff400;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #ffffff, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+    font: 50px 'ChunkFiveRegular';
+    margin:0;
+}
+
+th{
+
 }
