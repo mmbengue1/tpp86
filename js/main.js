@@ -82,12 +82,16 @@ $(document).ready(function() {
 });
 
 
-//permutation de l'image on click
+//permutation de vaisseau1 on click
 if(document.images){
     var image1 = new Image(); // charge une image a l'avance
     image1.src = "apparence/images/Star-Wars-Ship3.gif";
     var image2 = new Image(); //charger une deuxieme image a l'avance
-    image2.src = "apparence/images/explosion.gif";//l'image explosion
+    image2.src = "apparence/images/Star-Wars-Ship3-explosion.gif";//l'image explosion
+    var image3 = new Image(); // charge une image a l'avance
+    image3.src = "apparence/images/Star-Wars-Ship4.gif";
+    var image4 = new Image(); // charge une image a l'avance
+    image4.src = "apparence/images/Star-Wars-Ship4-explosion.gif";
 }
 
 
@@ -103,6 +107,16 @@ $(document).ready(function(){
         document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
 
     });
+
+    $("#spirite2").click(function() {
+
+        document.myImage2.src=image4.src;
+        $("#spirite2").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
+        $("#spirite2").fadeIn(1500);//reapparait  progressivement avec un temps
+        document.getElementById("spirite2").onmouseout=function(){document.myImage2.src=image3.src};
+
+    });
+
 //fonction pour animer un objet aleatoire avec un math random
 
 // Lien vers la page game.html
@@ -112,7 +126,7 @@ $(document).ready(function(){
     });
 
 
-    animateDiv($('#spirite'));//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
+    animateDiv($('#spirite,#spirite2'));//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
 });
 
 
@@ -153,7 +167,7 @@ function calcSpeed(prev, next) {
 
     var greatest = x > y ? x : y;
 
-    var speedModifier = 8;
+    var speedModifier = 0.5;
 
     var speed = Math.ceil(greatest / speedModifier);
 
