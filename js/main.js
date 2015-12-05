@@ -4,7 +4,11 @@
 
 var time = 0;
 var sprite = null;
+
+
+// Synchronisation du Dom avec notre fichier JavaScript.
 document.addEventListener('DOMContentLoaded', function() {
+
 //creation d'un compte a rebours  pour determiner le temps de jeu
 function startTimer(duration, affichage) {
     var timer = duration, minutes, seconds;
@@ -18,29 +22,33 @@ function startTimer(duration, affichage) {
         affichage.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            window.location.href = "/tpp86/game_over.html";
+            window.location.href = "/game_over.html";
 
         }
     }, 1000);
 }
 //lance la fonction startimer  au chargement de la page
 window.onload = function () {
-    var uneMinutes = 60 * 3  // genere le temps de jeu que l'on veut juste en multipliant par 60 s par le chiffre que l'on veut
+// Genere le temps de jeu que l'on veut juste en multipliant par 60 s par le chiffre que l'on veut
+    var deuxMinutes = 60 * 2;
         display = document.querySelector("#time");
-    startTimer(uneMinutes, display);
+    startTimer(deuxMinutes, display);
 };
 
 //Incrementation du score chaque fois qu'on aura atteint la cible
-document.getElementById('spirite').onclick=function(){
+document.getElementById('spirite').onclick=function() {
     var score = parseInt(document.getElementById("score").innerHTML);
-    score = score + 75;//incrementaion du scrore par 75 a chaque click
+    //incrementaion du scrore par 75 a chaque click
+    score = score + 75;
     document.getElementById("score").innerHTML = score;
-   /* if (score > 200) {
-      alert("you are  a beast bro! ")// juste un autre essaie,on esseyera d'appliquer au augmentation e vitesse a cette fonctiom
-    }
-*/
 
-}
+
+    /* if (score > 200) {
+     alert("you are  a beast bro! ")// juste un autre essaie,on esseyera d'appliquer au augmentation e vitesse a cette fonctiom
+     }
+     */
+
+};
 
 //Decrementation du scrore quand on rate un click sur la cible
 document.getElementById('body_game').onclick=function(){
@@ -52,9 +60,9 @@ document.getElementById('body_game').onclick=function(){
         window.location.href = "/game_over.html";
     }
 
-}
+};
 
-// Son audio tire avec la sourie
+// Son audio d'un tire avec le click de la sourie
 $(document).ready(function() {
     var shot = document.createElement("audio");
     shot.src="apparence/SoundEffect/shot_sound.mp3";
@@ -67,9 +75,8 @@ $(document).ready(function() {
 
 });
 
-// Son audio explosion lorsqua la cible est atteint
+// Son audio d'une explosion avec le click de la sourie sur la cible.
 $(document).ready(function() {
-    sprite = document.getElementById('spirite');
     var explosion = document.createElement("audio");
     explosion.src="apparence/SoundEffect/explosion.mp3";
     explosion.autoPlay=false;
@@ -82,7 +89,7 @@ $(document).ready(function() {
 });
 
 
-//permutation de l'image on click
+//Permutation de l'image on click
 if(document.images){
     var image1 = new Image(); // charge une image a l'avance
     image1.src = "apparence/images/Star-Wars-Ship3.gif";
@@ -91,15 +98,15 @@ if(document.images){
 }
 
 
-//faire disparaitre  et reapparaitre une image au click
+//Faire disparaitre  et reapparaitre une image au click
 
 $(document).ready(function(){
 
     $("#spirite").click(function() {
 
         document.myImage.src=image2.src;
-        $("#spirite").fadeOut(1000);//Disparrait progressivement par rapport a temps donne
-        $("#spirite").fadeIn(1500);//reapparait  progressivement avec un temps
+        //Dispariton et reapparition  progressive avec un temps donné.
+        $("#spirite").fadeOut(1000).fadeIn(1500);
         document.getElementById("spirite").onmouseout=function(){document.myImage.src=image1.src};
 
     });
@@ -113,64 +120,66 @@ $(document).ready(function(){
 
     });*/
 
-//fonction pour animer un objet aleatoire avec un math random
+//fonction pour animer un objet aleatoire avec un math random ???? ou est cette fonction ?????
 
-// Lien vers la page game.html
+// Lien vers la page game.html (Pourquoi cette fonction ????)
     $("#start_over").click(function() {
-        window.location ="game.html";
+        window.location ="game_.html";
 
     });
 
+    //Parametre de l'animation de l'objet
+    function animateDiv($target) {
+        var newq = makeNewPosition($target.parent());
+        var oldq = $target.offset();
+        var speed = calcSpeed([oldq.top, oldq.left], newq);
 
-    animateDiv($('#spirite,#spirite2'));//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
-});
+        $target.animate({
+            top: newq[0],
+            left: newq[1]
+        }, speed, function() {
+            animateDiv($target);
+        });
 
+    }
 
-
+//application de la fonction a un objet(on peut l'appliquer a autant d'element  ou d'objet que l'on veut )
+    animateDiv($('img'));
 
 //fonction generer une image aleatoirement par rapport a la fenetre du window
-function makeNewPosition() {
+    function makeNewPosition() {
 
 
-    var h = $(document.body).height() - 150;//parraport a la hauteur
-    var w = $(document.body).width() - 200;//parraport a la largeur
+        var h = $(document.body).height() - 150;//parraport a la hauteur
+        var w = $(document.body).width() - 200;//parraport a la largeur
 
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
+        var nh = Math.floor(Math.random() * h);
+        var nw = Math.floor(Math.random() * w);
 
-    return [nh, nw];
+        return [nh, nw];
 
-}
-//Parametre de l'animation de l'objet
-function animateDiv($target) {
-    var newq = makeNewPosition($target.parent());
-    var oldq = $target.offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
+    }
 
-    $target.animate({
-        top: newq[0],
-        left: newq[1]
-    }, speed, function() {
-        animateDiv($target);
-    });
+    //function pour regler la vitesse que l'on veut appliqquer
+    function calcSpeed(prev, next) {
 
-};
-//function pour regler la vitesse que l'on veut appliqquer
-function calcSpeed(prev, next) {
+        var x = Math.abs(prev[1] - next[1]);
+        var y = Math.abs(prev[0] - next[0]);
 
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
+        var greatest = x > y ? x : y;
 
-    var greatest = x > y ? x : y;
+        var speedModifier = 0.5;
 
-    var speedModifier = 0.5;
+        var speed = Math.ceil(greatest / speedModifier); //Deux Variable se nomme Speed ?? Verifier avec l'equipe.
 
-    var speed = Math.ceil(greatest / speedModifier);
-
-    return speed;
+        return speed;
 
 
 
 
-}
-});
+    }
+
+
+});// fin de la synchro du Dom avec jquery
+
+});// fin de la synchro du Dom avec JavaScript
